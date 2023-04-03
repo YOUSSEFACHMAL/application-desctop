@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crudd.ClientView">
+    <children>
+        <Pane prefHeight="457.0" prefWidth="204.0" style="-fx-background-color: #3949AB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ProgressBar layoutY="131.0" prefHeight="4.0" prefWidth="200.0" progress="0.0" style="-fx-background-color: black;" />
+                <Circle layoutX="91.0" layoutY="66.0" radius="52.0" rotate="-34.7" stroke="BLACK" strokeType="INSIDE">
+                    <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color blue="0.6842105388641357" green="0.026977745816111565" red="0.015838205814361572" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color blue="1.0" green="1.0" red="1.0" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </fill>
+                </Circle>
+                <ListView layoutY="129.0" prefHeight="209.0" prefWidth="204.0" style="-fx-background-color: #64B5F6;" />
+                <Button id="blue" fx:id="btnCredit" layoutX="-4.0" layoutY="279.0" mnemonicParsing="false" onAction="#onclikCredit" prefHeight="38.0" prefWidth="208.0" stylesheets="@stylesheet.css" text="Credits">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button id="blue" fx:id="btnClient" layoutX="-4.0" layoutY="154.0" mnemonicParsing="false" onAction="#onclikClient" prefHeight="38.0" prefWidth="208.0" stylesheets="@stylesheet.css" text="clients">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button id="blue" fx:id="btnProduit" layoutX="-4.0" layoutY="213.0" mnemonicParsing="false" onAction="#onclikProduit" prefHeight="38.0" prefWidth="208.0" stylesheets="@stylesheet.css" text="Produits">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="85.0" fitWidth="83.0" layoutX="50.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/icon.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane layoutX="204.0" prefHeight="457.0" prefWidth="604.0" stylesheets="@stylesheet.css">
+         <children>
+            <Button id="windows" fx:id="ajoute_cli" layoutX="289.0" layoutY="29.0" mnemonicParsing="false" onAction="#AjouteCLi" style="-fx-background-radius: 20;" stylesheets="@stylesheet.css" text="Ajouter">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <TextField fx:id="nom_cli" layoutX="95.0" layoutY="76.0" prefHeight="39.0" prefWidth="219.0" promptText="entrer le nom">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="adresse_cli" layoutX="95.0" layoutY="126.0" prefHeight="39.0" prefWidth="219.0" promptText="entrer adresse">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <Label layoutX="10.0" layoutY="83.0" text="NOM        :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="138.0" text="ADRESSE :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table" layoutY="186.0" onMouseClicked="#ClickTable" prefHeight="271.0" prefWidth="592.0" style="-fx-border-color: blue;">
+              <columns>
+                <TableColumn fx:id="nom" prefWidth="142.0" text="Nom_Client" />
+                  <TableColumn fx:id="adresse" minWidth="1.00006103515625" prefWidth="236.0" text="Adresse_Client" />
+                  <TableColumn fx:id="id" prefWidth="180.0" text="id" />
+              </columns>
+            </TableView>
+            <Pane layoutX="395.0" layoutY="-72.0" prefHeight="145.0" prefWidth="137.0" rotate="60.3" style="-fx-background-color: #3949AB;" />
+            <Button id="windows1" fx:id="suprimer_cli" layoutX="353.0" layoutY="131.0" mnemonicParsing="false" onAction="#SuppCl" style="-fx-background-radius: 20;" stylesheets="@stylesheet.css" text="Supprimer">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button id="windows2" fx:id="modifier_cli" layoutX="333.0" layoutY="83.0" mnemonicParsing="false" onAction="#ModifierCli" style="-fx-background-radius: 20;" stylesheets="@stylesheet.css" text="Modifier">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Text layoutX="9.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CLIENTS :">
+               <font>
+                  <Font name="Algerian" size="39.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="0.7014218009478673" endY="0.943127962085308" startX="0.7109004739336493">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color blue="0.5526315569877625" green="0.017909357324242592" red="0.09811768680810928" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color blue="1.0" green="1.0" red="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+         </children>
+        </Pane>
+      <Button id="shiny" fx:id="btnCommande" layoutX="38.0" layoutY="379.0" mnemonicParsing="false" onAction="#onclikCommande" prefHeight="57.0" prefWidth="145.0" stylesheets="@stylesheet.css" text="Commandes" />
+    </children>
+</AnchorPane>
